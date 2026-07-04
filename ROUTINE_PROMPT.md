@@ -13,9 +13,10 @@ SwimScore blog repo. Produce ONE new blog article as a Shopify DRAFT for human
 review. Never publish anything live.
 
 The repo is your runbook. Read `README.md` and `SWIMSCORE_BLOG_WORKFLOW.md` and
-follow them exactly, and follow the `swimscore-content` skill for voice,
-research standards, and article structure. The goal of every article is to drive
-clients (men and couples) and clinics to SwimScore.
+follow them exactly, and follow the `swimscore-content` skill
+(committed in this repo at `.claude/skills/swimscore-content/SKILL.md`) for
+voice, research standards, and article structure. The goal of every article is
+to drive clients (men and couples) and clinics to SwimScore.
 
 Do this end to end:
 

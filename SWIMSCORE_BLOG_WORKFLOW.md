@@ -19,7 +19,9 @@ skill. This document is the operational runbook that wraps that skill.
 - **Shopify** must be connected (MCP). Store: SwimScore, `www.myswimscore.com`.
 - The **`swimscore-content` skill** is the source of truth for voice, research
   standards, and article structure. Always follow it. This runbook never
-  overrides it.
+  overrides it. It is **committed in this repo** at
+  `.claude/skills/swimscore-content/SKILL.md`, so it is available automatically
+  whenever the repo is cloned (no separate attachment required).
 
 ---
 

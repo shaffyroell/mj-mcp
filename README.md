@@ -61,7 +61,9 @@ available to it, not just to an interactive session:
 
 1. **`BFL_API_KEY`** set in the environment's persistent variables (for FLUX).
 2. **Shopify MCP** connected (to create the draft).
-3. The **`swimscore-content`** skill available (for voice and standards).
+3. The **`swimscore-content`** skill. This is now **committed in this repo** at
+   `.claude/skills/swimscore-content/SKILL.md`, so it loads automatically
+   whenever the repo is cloned. No separate attachment needed.
 4. **Network access** allowing `api.bfl.ai` (Full, or Custom allowlisting
    `api.bfl.ai` and `*.bfl.ai`).
 
