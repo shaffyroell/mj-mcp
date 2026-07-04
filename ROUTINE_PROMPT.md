@@ -53,7 +53,7 @@ Do this end to end:
    the image (`stagedUploadsCreate`, POST the file, use the `resourceUrl`) and
    attach it with descriptive SEO alt text. Set SEO metafields
    `global.title_tag` and `global.description_tag` (type
-   `single_line_text_field`). Set relevant tags and author `{ name: "SwimScore" }`.
+   `single_line_text_field`). Set relevant tags and author `{ name: "Denys Vasylenko" }`.
 7. Before finalizing, run `CONTENT_CHECKLIST.md` end to end and fix anything that
    fails (not pushing meds/supplements; everything true to the cited sources;
    genuinely helpful for navigating mixed research; simple enough for any

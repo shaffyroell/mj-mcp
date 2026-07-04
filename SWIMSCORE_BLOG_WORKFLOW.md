@@ -163,7 +163,7 @@ PY
    then POST the file (with all returned parameters, file field last) to the
    returned `url`; use the returned `resourceUrl` as the article image URL.
 2. **Create the article** with `articleCreate`:
-   - `blogId`: News blog id above. `author: { name: "SwimScore" }`.
+   - `blogId`: News blog id above. `author: { name: "Denys Vasylenko" }`.
    - `body`: the HTML. `summary`: the teaser HTML. `handle`: the SEO handle.
    - `tags`: relevant topic tags.
    - `image`: `{ url: <resourceUrl>, altText: <descriptive, relevant alt text> }`.
