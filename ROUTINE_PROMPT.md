@@ -54,7 +54,13 @@ Do this end to end:
    attach it with descriptive SEO alt text. Set SEO metafields
    `global.title_tag` and `global.description_tag` (type
    `single_line_text_field`). Set relevant tags and author `{ name: "SwimScore" }`.
-7. Verify by reading back id, handle, isPublished, publishedAt, image.url, and
-   metafields. Report a concise summary: the topic chosen, the article handle,
-   and confirm it is a DRAFT awaiting review. Do NOT set `isPublished: true`; do
-   NOT publish live.
+7. Before finalizing, run `CONTENT_CHECKLIST.md` end to end and fix anything that
+   fails (not pushing meds/supplements; everything true to the cited sources;
+   genuinely helpful for navigating mixed research; simple enough for any
+   everyday man).
+8. Verify by reading back id, handle, isPublished, publishedAt, image.url, and
+   metafields. Confirm `isPublished` reads back as `false`. If you used
+   `articleUpdate` at any point, pass `isPublished: false` explicitly, because
+   Shopify can otherwise flip the draft live. Report a concise summary: the topic
+   chosen, the article handle, and confirm it is a DRAFT awaiting review. Do NOT
+   set `isPublished: true`; do NOT publish live.

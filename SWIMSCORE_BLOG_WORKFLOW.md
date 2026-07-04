@@ -113,6 +113,13 @@ rules, checked before finishing:
 - Also produce: an **SEO meta title** (~55-60 chars), an **SEO meta description**
   (~150-160 chars), a **URL handle**, and a 1-2 sentence **summary**.
 
+**Required quality gate:** before finalizing, run
+[`CONTENT_CHECKLIST.md`](./CONTENT_CHECKLIST.md) end to end and fix anything that
+fails. It verifies the four things that matter most: we are not pushing meds or
+supplements, everything we say is true to the cited sources, we are genuinely
+helpful for navigating the mixed research and online noise, and it is simple
+enough for any everyday man to understand.
+
 ## 5. Generate the hero image (FLUX)
 
 Use `flux_generate.py` (BFL FLUX `flux-pro-1.1-ultra`, aspect ratio 16:9).
@@ -165,6 +172,10 @@ PY
      and the same with `key: "description_tag"` for the meta description.
    - **Draft + schedule**: create with `isPublished: false` (a hidden draft for
      review) and `publishDate` set to the intended posting time (ISO 8601 UTC).
+     **Gotcha:** `articleUpdate` re-evaluates the publish state, so if you later
+     edit the article you MUST pass `isPublished: false` again or Shopify can
+     flip the draft live (or schedule it) when a `publishDate` is present. Always
+     read back `isPublished` and confirm it is `false`.
      To arm true auto-publish at that time, set `isPublished: true` (Shopify then
      treats a future `publishDate` as scheduled). Default policy: leave as a
      hidden draft and only arm auto-publish after the content has been reviewed,

@@ -35,6 +35,7 @@ Thursday at 13:30 UTC (~9:30am US Eastern)**. Each run:
 | File | Purpose |
 | --- | --- |
 | `SWIMSCORE_BLOG_WORKFLOW.md` | The authoritative step-by-step runbook. |
+| `CONTENT_CHECKLIST.md` | The required final quality gate every article must pass. |
 | `flux_generate.py` | Generates hero images via the Black Forest Labs FLUX API. |
 | `pyproject.toml` | Python dependencies for the image script (`httpx`, `pillow`). |
 
