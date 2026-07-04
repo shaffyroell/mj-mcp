@@ -1,22 +1,14 @@
 [project]
-name = "midjourney-mcp"
-version = "0.1.1"
-description = "A MCP server for generating images with Midjourney"
+name = "swimscore-blog-tools"
+version = "0.2.0"
+description = "Tooling and runbook for SwimScore's automated blog content workflow (FLUX hero images + Shopify publishing)"
 readme = "README.md"
 license = "GPL-3.0"
 requires-python = ">=3.10"
 dependencies = [
-    "curl-cffi>=0.10.0",
     "httpx>=0.28.1",
-    "mcp[cli]>=1.6.0",
+    "pillow>=10.0.0",
 ]
 
-[project.scripts]
-midjourney-mcp = "midjourney_mcp.midjourney:main"
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-include-package-data = true
-
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.uv]
+package = false
