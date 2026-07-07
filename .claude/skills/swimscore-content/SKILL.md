@@ -266,11 +266,40 @@ Morphology: Strongest Alpha-lipoic acid. Supporting L-carnitine. Skeptical CoQ10
 
 ---
 
-## Content Series Tracker
+## Topic Map (What We Want Authority On)
 
-Sperm Parameter Series (completed): Progressive Motility, DNA Fragmentation, Morphology, Sperm Concentration. Part 5 planned: TMSC and putting the parameters together.
-Hormone Series: FSH, LH, Testosterone, Prolactin, Estradiol (completed). Next: Thyroid (TSH), SHBG.
-Clinical and Lifestyle Topics (high priority): Enclomiphene (drafted), Varicocele (drafted), Heat exposure, Alcohol (done), Obesity, Sleep and testosterone, Exercise, IVF and ICSI, How to read your SwimScore results.
+This is the durable list of topics SwimScore wants to be the cited authority on, grouped by series and given in priority order within each series. It is a content-strategy artifact: edit it only when the brand deliberately adds, drops, or reprioritizes a topic area.
+
+This list must never record which topics are already published, drafted, or done. That status changes every time an article goes out, this list does not get edited nearly that often, and the two drift out of sync if status ever gets written here, which is exactly what happened before this section was rewritten. Coverage is never cached in this file or anywhere else in the repo. Every time the topic for a new article is chosen, it is determined live from the actual Shopify blog, not from memory of what this list says. See "Choosing a Topic" in `SWIMSCORE_BLOG_WORKFLOW.md` for that procedure.
+
+**Sperm Parameter Series**, in order, each covering that metric's WHO threshold, what drives it, and the intervention evidence:
+1. Progressive Motility
+2. Sperm Concentration
+3. Sperm Morphology
+4. DNA Fragmentation
+5. Total Motile Sperm Count (TMSC): combining volume, concentration, and motility into one number, and how to read all the parameters together
+
+**Hormone Series**, in order, each covering what the hormone does and what a high or low result means for fertility:
+1. FSH
+2. LH
+3. Testosterone
+4. Prolactin
+5. Estradiol
+6. Thyroid (TSH)
+7. SHBG
+
+**Clinical and Lifestyle Series**, in priority order:
+1. Enclomiphene: the SERM used off-label as a TRT alternative that preserves fertility
+2. Varicocele: the vein condition, what repair does and does not fix
+3. Heat Exposure: scrotal temperature and what actually matters versus what is overhyped
+4. Alcohol: dose-response effects on hormones and semen parameters
+5. Obesity: the aromatase mechanism, and what weight loss does and does not fix
+6. Sleep and Testosterone: sleep's effect on the hormone axis and on semen quality
+7. Exercise: moderate training versus overtraining
+8. IVF and ICSI: what each procedure is, and where male-factor testing fits in
+9. How to Read Your SwimScore Results: a plain-English guide to interpreting a semen analysis and hormone panel together
+
+Adding a wholly new topic area (a hormone, condition, or lifestyle factor not listed above) is a deliberate edit to this list, made when the brand decides to expand scope. It is not something the routine invents mid-run.
 
 ---
 

@@ -24,9 +24,16 @@ Do this end to end:
    connected, and `api.bfl.ai` is reachable. If anything is missing, STOP and
    report exactly what is missing. Do not proceed.
 2. Pick the topic. Query the Shopify "News" blog
-   (`gid://shopify/Blog/92195225782`) for all existing articles and choose the
-   next highest-priority topic that is NOT already covered (priority list is in
-   the skill and the runbook). State the topic and a one-line justification.
+   (`gid://shopify/Blog/92195225782`) for all existing articles, live, every
+   run. Walk the `swimscore-content` skill's Topic Map in priority order and
+   pick the first topic with no substantive existing article, per "Choosing a
+   Topic" in `SWIMSCORE_BLOG_WORKFLOW.md`. The Topic Map lists what SwimScore
+   wants authority on; it never records what is already published, so
+   coverage always comes from the live query, never from memory of a prior
+   run or from any status written in a repo file. State the topic and a
+   one-line justification. If every Topic Map entry is already covered,
+   propose 2 to 3 adjacent candidates or stop and ask, rather than repeating
+   a topic or inventing one unflagged.
 3. Research using real primary sources (PubMed, PMC, AUA/EAU/ASRM/WHO
    guidelines). Cite as (Author et al., Journal, Year). Flag anything thin or
    unverified; never cite unverified claims; never overclaim pregnancy or

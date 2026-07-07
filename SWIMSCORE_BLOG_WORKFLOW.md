@@ -27,16 +27,19 @@ skill. This document is the operational runbook that wraps that skill.
 
 ## 1. Discover existing content (avoid duplicates, gather link targets)
 
-Query the Shopify Admin API for every published article so you do not duplicate
-a topic and so you can collect internal-link targets and match the house image
-style.
+Query the Shopify Admin API for every article on the blog, published or draft,
+so you never duplicate a topic, so you can collect internal-link targets, and
+so you can match the house image style. Always query live. No document in this
+repo tracks what is already published, and none should ever be edited to track
+it; that state goes stale the moment a new draft is created and nothing here
+would know.
 
 ```graphql
 query BlogArticles {
   blogs(first: 5) {
     edges { node { id handle title
       articles(first: 50, reverse: true) {
-        edges { node { id title handle publishedAt tags image { url altText } } }
+        edges { node { id title handle publishedAt isPublished tags image { url altText } } }
       }
     } }
   }
@@ -45,21 +48,39 @@ query BlogArticles {
 
 - The main blog is **News** (`gid://shopify/Blog/92195225782`, handle `news`).
   Publish there unless told otherwise.
-- Note which topics are already covered. Read 1-2 full article bodies (query the
-  `body` field by article ID) to re-calibrate voice before writing.
+- Read 1-2 full article bodies (query the `body` field by article ID) to
+  re-calibrate voice before writing.
 
 ## 2. Choose the topic
 
-Pick a topic that is (a) not already covered, (b) high SEO value, and (c) good
-for internal linking and the client + clinic goal. Prioritize the
-`swimscore-content` skill's "not yet started, high priority" list (clinical and
-lifestyle topics: enclomiphene [done], varicocele, heat exposure, alcohol
-[done], obesity, sleep, exercise, IVF/ICSI, how to read your results), and the
-in-progress series (Hormone Series next: Prolactin done, Estradiol done; Sperm
-Parameter Series Part 5: TMSC / putting parameters together).
+Coverage is computed live, every run, from the query above. It is never read
+from a cached "done" list anywhere in this repo.
 
-State the chosen topic and a one-line justification before writing. If the user
-named a topic, use it.
+1. Pull the **Topic Map** from the `swimscore-content` skill (its `## Topic
+   Map` section). This is the ranked list of what SwimScore wants authority
+   on. It never records what is already published.
+2. Walk each series in the Topic Map in priority order (Sperm Parameter
+   Series, Hormone Series, Clinical and Lifestyle Series). For each topic,
+   check it against the live article list from step 1: does an existing
+   article substantively cover this exact topic, not just mention it in
+   passing or share a generic tag with it? A shared tag like "Testosterone"
+   or "Hormones" does not by itself mean the topic is covered; several
+   unrelated articles carry those tags. When a title is ambiguous, open that
+   article's body or summary to confirm before deciding either way.
+3. The first topic in Topic Map order with no substantive existing article is
+   the one to write. State it and a one-line justification before writing.
+   If the user named a topic directly, use that instead and skip this
+   selection process.
+4. If every topic in the Topic Map is already covered, say so explicitly.
+   Either propose 2 to 3 candidate topics adjacent to the existing series for
+   a human to approve, or stop and ask. Do not silently repeat a topic, and
+   do not invent a new one and start writing without flagging it first.
+5. If the topic belongs to a numbered sub-series (for example, the Lifestyle
+   Series' "Part X of the SwimScore Lifestyle Series" articles), determine
+   the next part number by finding the highest Part N already published in
+   that series from the actual article bodies, and use N+1. Do not guess or
+   recall the number from memory; a stale guess is exactly the failure mode
+   this whole process exists to avoid.
 
 ## 3. Research (real sources only)
 
@@ -68,7 +89,9 @@ guidelines: AUA, EAU, ASRM, WHO). For deep/clinical topics, run a dedicated
 research pass and produce a citable evidence brief with:
 
 - Specific study design, sample size, and numeric findings.
-- Citations in the format `(Author et al., Journal Name, Year)`.
+- Citations linked inline with a resolvable PubMed or DOI link, author, year,
+  and journal named in the sentence, per the skill's Research Standards. Never
+  a vague tag like "(PMC, 2024)."
 - **Explicit honesty flags**: what is thin, contested, or unverified. Do not cite
   claims you could not verify in a primary source. Never overclaim pregnancy or
   live-birth benefit. Apply the Henriksen 2025 rule where supplements come up.
@@ -112,13 +135,15 @@ rules, checked before finishing:
   `<a href>`, `<em>`, `<hr>`. Do not repeat the title inside the body.
 - Also produce: an **SEO meta title** (~55-60 chars), an **SEO meta description**
   (~150-160 chars), a **URL handle**, and a 1-2 sentence **summary**.
-- **AI/LLM discoverability (GEO):** follow the skill's "Writing for AI and LLM
-  Discoverability" section. Question-phrased `<h2>` headers where natural,
-  answer-first section openings, self-contained sections, the brand named
-  explicitly in fact-bearing sentences, numbers paired with their citation in
-  the same or next sentence, and a closing Common Questions Q&A block (3-5
-  Q&As, required for deep-dives and clinical explainers, optional for
-  lifestyle pieces) placed after Our Take and before the italic closing lines.
+- **AI/LLM discoverability (GEO):** follow the skill's "Writing to Be Cited"
+  and "Bylines, Reviewer, and Attribution" sections. A three-sentence Key
+  Takeaways block directly under the title; question-phrased `<h2>` headers
+  where natural with an answer-first opening sentence; self-contained
+  sections and claims; the brand named explicitly in fact-bearing sentences;
+  a named author and reviewer line; and a closing FAQ (3-5 search-phrased
+  questions, required for every content type) placed after Our Take, followed
+  by a numbered References section for research deep-dives and clinical
+  explainers, all before the italic closing lines.
 
 **Required quality gate:** before finalizing, run
 [`CONTENT_CHECKLIST.md`](./CONTENT_CHECKLIST.md) end to end and fix anything that
