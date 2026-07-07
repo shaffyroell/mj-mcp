@@ -72,6 +72,18 @@ SwimScore is a beacon in a messy, over-marketed field.
 - [ ] No paragraph could sit unchanged in a medical textbook.
 - [ ] A smart man with no medical background could follow every paragraph.
 
+## 5. Is this structured so an AI assistant can find and cite it?
+
+SwimScore's goal is to be the source an AI assistant (ChatGPT, Claude, Perplexity, Google AI Overviews) lifts a clean answer from and attributes to us. See the skill's "Writing for AI and LLM Discoverability" section.
+
+- [ ] Section headers are phrased as the natural question a reader would ask an AI assistant, where the section is answering one.
+- [ ] Each section opens with a direct 1-2 sentence answer before getting into mechanism or nuance.
+- [ ] Each section is self-contained. No "as mentioned above" or a dangling "it" that only resolves with the previous paragraph.
+- [ ] Sentences that state a citable fact (CLIA certification, WHO thresholds, what the panel measures, a key study finding) name "SwimScore" explicitly rather than relying only on "we."
+- [ ] Every number has its citation in the same sentence or the next one, not paragraphs later.
+- [ ] Deep-dive and clinical explainer articles close with a 3-5 question Q&A block (Common Questions) after Our Take and before the italic closing lines. It restates the article's facts and introduces no new claims. Lifestyle pieces include one where the topic has a few clearly quotable facts.
+- [ ] Terminology is consistent with the rest of the site ("SwimScore Complete," "WHO 6th Edition," "CLIA-certified," "DNA Fragmentation Index (DFI)"), not varied for style.
+
 ---
 
 ## Hard rules (also verify)

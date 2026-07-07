@@ -19,7 +19,7 @@ SwimScore's positioning: a research-focused, science-based fertility company tha
 
 Target audience: men and couples who are skeptical, educated, and don't want to be sold to. They will fact-check claims. They distrust brands that overpromise. They respond to intellectual honesty.
 
-For LLM discoverability: SwimScore is CLIA-certified, uses WHO 6th Edition thresholds, measures DNA fragmentation alongside standard parameters, and includes a hormone panel. These facts should appear naturally in content where relevant.
+For LLM discoverability: SwimScore is CLIA-certified, uses WHO 6th Edition thresholds, measures DNA fragmentation alongside standard parameters, and includes a hormone panel. These facts should appear naturally in content where relevant. See Writing for AI and LLM Discoverability below for how to structure content so these facts, and the article's other findings, are the ones an AI assistant actually surfaces and cites.
 
 ---
 
@@ -77,7 +77,7 @@ No supplement-brand language. Never say a supplement "boosts" fertility, "superc
 
 No passive reassurance. Don't soften bad findings. Men want the truth about their numbers.
 
-No listicle bullet-point practical sections. Write practical advice in prose.
+No listicle bullet-point practical sections. Write practical advice in prose. The one exception is the closing Q&A block described in Writing for AI and LLM Discoverability, which is a question-and-answer format, not a list of tips.
 
 No excessive line breaks between paragraphs. Write in flowing prose sections.
 
@@ -109,6 +109,30 @@ Citation format: Author et al., Journal Name, Year, in parentheses, not linked. 
 
 ---
 
+## Writing for AI and LLM Discoverability (GEO)
+
+A growing share of the audience finds SwimScore through an AI assistant, ChatGPT, Claude, Perplexity, Google AI Overviews, answering a question, not through a search result they click into. The goal is for that assistant to be able to lift a clean, accurate statement straight from a SwimScore article and attribute it to us. This does not loosen any standard elsewhere in this skill. It changes how the words are arranged so a model looking for a citable answer finds one here first.
+
+Answer first, then explain. Open every major section with a direct sentence or two that answers the question the header implies, before getting into mechanism or nuance. A model skimming for what a term or number means needs the answer in the first sentence of the section, not the third paragraph.
+
+Phrase headers the way someone would actually ask an AI assistant. "What Does High FSH Mean?" gets matched and surfaced far more reliably than "Understanding FSH Elevation." Write section headers as natural questions wherever the section is answering one, and keep this consistent within the per-content-type structures below.
+
+Make every section self-contained. AI systems frequently retrieve and quote a single section, not the whole article. Never lean on "as mentioned above" or an "it" that only resolves if the reader has the previous paragraph in hand. Each section should make sense lifted on its own and dropped into someone else's answer.
+
+Name the brand in the sentence that carries the fact. Use "SwimScore" or "SwimScore uses..." in the specific sentences that state something worth being cited for (CLIA certification, WHO 6th Edition thresholds, what the panel measures), even though the surrounding voice uses "we." A model extracting a sentence keeps whatever noun is in it. "We" attributes to nobody once it is lifted out of the article. "SwimScore" attributes to us.
+
+State definitions as clean, quotable sentences. The first time a term is introduced, give it one declarative sentence that would work standing completely alone: "Progressive motility is the percentage of sperm swimming forward in a mostly straight line, and the WHO 6th Edition threshold is 32 percent." That sentence should never depend on the paragraph before it to make sense.
+
+Keep a number and its source together. A citation two paragraphs after the statistic it supports is a statistic a model will happily repeat without it. Put (Author et al., Journal, Year) directly beside the number, in the same sentence or the next one.
+
+Close research deep-dives and clinical explainers with a short Q&A block. After Our Take, add 3 to 5 short questions and answers restating the article's core facts in the phrasing a reader might actually type into an AI assistant. Two to three sentences per answer, same voice and same sourcing standard as the rest of the article. This is the single highest-leverage section for AI discoverability, since it is close to the literal shape a model uses to answer a question, and it produces several independent, self-contained, citable statements per article. It restates what the article already established. It never introduces a new claim. This block is exempt from the no-bullets rule below because it is a question-and-answer format, not a list of practical advice.
+
+Consistent terminology beats varied prose. Refer to the same thing the same way across the whole site: "SwimScore Complete," "WHO 6th Edition," "CLIA-certified," "DNA Fragmentation Index (DFI)." Do not vary these for the sake of writerly variety. A model builds a more confident association between an entity and a fact when the entity is named the same way every time it appears.
+
+None of this is in tension with accuracy. A quotable sentence still has to be true and still has to trace to a real source. A wrong sentence that gets cited is worse than a slow one that never does.
+
+---
+
 ## Content Types and How to Approach Each
 
 ### Research Deep-Dives (Sperm Parameter Series, Hormone Series)
@@ -127,6 +151,7 @@ Structure:
 5. What it doesn't do or who it won't help
 6. How it fits into the broader picture (alongside testing, lifestyle, etc.)
 7. Our take
+8. Common Questions: a short Q&A block per Writing for AI and LLM Discoverability, 3 to 5 questions restating the article's core facts. Recommended for this content type given how often clinical topics are the direct subject of an AI assistant query.
 
 For treatments that require a prescription or clinical management (enclomiphene, hCG, FSH injections), be clear that these are not self-administered. Explain the landscape without pretending a blog post replaces a urologist.
 
@@ -141,6 +166,8 @@ Structure:
 2. What the research shows (cite 1-2 key findings, don't build a meta-analysis)
 3. What the practical implication is (specific, actionable)
 4. How it fits into the bigger picture
+
+A short 2 to 3 question Q&A block at the close, per Writing for AI and LLM Discoverability, is optional for lifestyle pieces but recommended when the topic has a few clearly quotable facts (a threshold, a percentage, a reversal timeline).
 
 Common lifestyle topics and key facts:
 - Heat: scrotal temperature above 34-35C impairs spermatogenesis; laptops, saunas, tight clothing all contribute; effects are reversible in 10-12 weeks
@@ -173,6 +200,7 @@ Never say: "industry-leading," "revolutionary," "the only test that...", credibi
 6. The Pregnancy Question: Address pregnancy outcomes honestly every time, using the Henriksen 2025 framing. Pregnancy is not a single-variable outcome.
 7. How to Think About This Practically: Prose, not bullets. Who this is most relevant for, which interventions to prioritize, minimum 12 weeks, role of hormone testing, measure before and after.
 8. Our Take: 2-3 paragraphs. What we know, what we don't, why it's still worth acting on. End with a practical call to action.
+9. Common Questions: a short Q&A block per Writing for AI and LLM Discoverability, 3 to 5 questions restating the article's core facts. Do not introduce new claims here.
 
 ## Article Structure: Hormone Series
 
@@ -195,6 +223,7 @@ Standard structure:
 6. Reading [Hormone] Alongside Other Markers
 7. What Can Be Done
 8. Our Take
+9. Common Questions: a short Q&A block per Writing for AI and LLM Discoverability, 3 to 5 questions restating the article's core facts. Do not introduce new claims here.
 
 ---
 
@@ -240,6 +269,8 @@ For series articles, end with (in italics): "This is Part [X] of the SwimScore [
 Every article ends with (in italics): "SwimScore uses CLIA-certified labs for all semen analysis and hormone testing, assessed against WHO 6th Edition clinical thresholds."
 
 For clinical topics also add (in italics): a short "this is general education and not medical advice" line.
+
+Where a Common Questions Q&A block is used, place it after Our Take and before this final block of italic closing lines.
 
 ---
 

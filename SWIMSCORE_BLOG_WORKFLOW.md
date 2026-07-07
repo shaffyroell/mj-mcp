@@ -112,6 +112,13 @@ rules, checked before finishing:
   `<a href>`, `<em>`, `<hr>`. Do not repeat the title inside the body.
 - Also produce: an **SEO meta title** (~55-60 chars), an **SEO meta description**
   (~150-160 chars), a **URL handle**, and a 1-2 sentence **summary**.
+- **AI/LLM discoverability (GEO):** follow the skill's "Writing for AI and LLM
+  Discoverability" section. Question-phrased `<h2>` headers where natural,
+  answer-first section openings, self-contained sections, the brand named
+  explicitly in fact-bearing sentences, numbers paired with their citation in
+  the same or next sentence, and a closing Common Questions Q&A block (3-5
+  Q&As, required for deep-dives and clinical explainers, optional for
+  lifestyle pieces) placed after Our Take and before the italic closing lines.
 
 **Required quality gate:** before finalizing, run
 [`CONTENT_CHECKLIST.md`](./CONTENT_CHECKLIST.md) end to end and fix anything that
