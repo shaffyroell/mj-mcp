@@ -59,14 +59,18 @@ from a cached "done" list anywhere in this repo.
 1. Pull the **Topic Map** from the `swimscore-content` skill (its `## Topic
    Map` section). This is the ranked list of what SwimScore wants authority
    on. It never records what is already published.
-2. Walk each series in the Topic Map in priority order (Sperm Parameter
-   Series, Hormone Series, Clinical and Lifestyle Series). For each topic,
-   check it against the live article list from step 1: does an existing
-   article substantively cover this exact topic, not just mention it in
-   passing or share a generic tag with it? A shared tag like "Testosterone"
-   or "Hormones" does not by itself mean the topic is covered; several
-   unrelated articles carry those tags. When a title is ambiguous, open that
-   article's body or summary to confirm before deciding either way.
+2. Walk the Topic Map top to bottom, in the order its sections are written
+   (Tier 1 clusters, then the continuing series, then Tier 2, then Tier 3),
+   and within each cluster or series, walk its topics in the order listed.
+   For each topic, check it against the live article list from step 1: does
+   an existing article substantively cover this exact topic, not just
+   mention it in passing or share a generic tag with it? A shared tag like
+   "Testosterone" or "Hormones" does not by itself mean the topic is
+   covered; several unrelated articles carry those tags. When a title is
+   ambiguous, open that article's body or summary to confirm before
+   deciding either way. A parenthetical note in the Topic Map naming an
+   existing article as a cluster's anchor is context, not a substitute for
+   this live check on every other topic in that cluster.
 3. The first topic in Topic Map order with no substantive existing article is
    the one to write. State it and a one-line justification before writing.
    If the user named a topic directly, use that instead and skip this

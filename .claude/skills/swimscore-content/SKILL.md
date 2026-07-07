@@ -268,38 +268,72 @@ Morphology: Strongest Alpha-lipoic acid. Supporting L-carnitine. Skeptical CoQ10
 
 ## Topic Map (What We Want Authority On)
 
-This is the durable list of topics SwimScore wants to be the cited authority on, grouped by series and given in priority order within each series. It is a content-strategy artifact: edit it only when the brand deliberately adds, drops, or reprioritizes a topic area.
+This is the durable list of topics SwimScore wants to be the cited authority on, grouped by series and cluster and given in priority order. It is a content-strategy artifact: edit it only when the brand deliberately adds, drops, or reprioritizes a topic area.
 
-This list must never record which topics are already published, drafted, or done. That status changes every time an article goes out, this list does not get edited nearly that often, and the two drift out of sync if status ever gets written here, which is exactly what happened before this section was rewritten. Coverage is never cached in this file or anywhere else in the repo. Every time the topic for a new article is chosen, it is determined live from the actual Shopify blog, not from memory of what this list says. See "Choosing a Topic" in `SWIMSCORE_BLOG_WORKFLOW.md` for that procedure.
+This list must never record which topics are already published, drafted, or done. That status changes every time an article goes out, this list does not get edited nearly that often, and the two drift out of sync if status ever gets written here, which is exactly what happened before this section was rewritten. Coverage is never cached in this file or anywhere else in the repo. Every time the topic for a new article is chosen, always check the current articles on the site first: query the Shopify blog live and determine what is actually covered from the real article list, never from memory of what this list says or from a note left in a prior draft. See "Choosing a Topic" in `SWIMSCORE_BLOG_WORKFLOW.md` for that procedure. This applies to every cluster below exactly the same way it applies to the two original series.
 
-**Sperm Parameter Series**, in order, each covering that metric's WHO threshold, what drives it, and the intervention evidence:
-1. Progressive Motility
-2. Sperm Concentration
-3. Sperm Morphology
-4. DNA Fragmentation
-5. Total Motile Sperm Count (TMSC): combining volume, concentration, and motility into one number, and how to read all the parameters together
+A few topics below already anchor a published article (noted in parentheses as context, not as a status field to maintain). That published piece is a foundation the cluster builds on, not proof the surrounding cluster is finished; check live coverage for every subtopic individually.
 
-**Hormone Series**, in order, each covering what the hormone does and what a high or low result means for fertility:
-1. FSH
-2. LH
-3. Testosterone
-4. Prolactin
-5. Estradiol
-6. Thyroid (TSH)
-7. SHBG
+### Tier 1: own first
 
-**Clinical and Lifestyle Series**, in priority order:
-1. Enclomiphene: the SERM used off-label as a TRT alternative that preserves fertility
-2. Varicocele: the vein condition, what repair does and does not fix
-3. Heat Exposure: scrotal temperature and what actually matters versus what is overhyped
-4. Alcohol: dose-response effects on hormones and semen parameters
-5. Obesity: the aromatase mechanism, and what weight loss does and does not fix
-6. Sleep and Testosterone: sleep's effect on the hormone axis and on semen quality
-7. Exercise: moderate training versus overtraining
-8. IVF and ICSI: what each procedure is, and where male-factor testing fits in
-9. How to Read Your SwimScore Results: a plain-English guide to interpreting a semen analysis and hormone panel together
+**Results Interpretation Cluster.** The "what does my number mean" cluster, the highest-intent search and AI-assistant queries in the category. One piece per parameter-and-result-state combination:
+1. Low count with normal motility: what it means and what to check next
+2. A normal semen analysis but still not conceiving: what a normal result does not rule out
+3. High DNA fragmentation behind an otherwise normal semen analysis
+4. Low testosterone with high LH versus normal or low LH: what the pattern points to
+5. TMSC thresholds and how they map to IUI, IVF, and ICSI
 
-Adding a wholly new topic area (a hormone, condition, or lifestyle factor not listed above) is a deliberate edit to this list, made when the brand decides to expand scope. It is not something the routine invents mid-run.
+**TRT and Fertility Cluster.** TRT is one of the most common and underrecognized causes of male infertility, and one of the highest-value clusters to own (the existing Enclomiphene explainer anchors it):
+1. TRT-induced infertility: the mechanism and how common it actually is
+2. Recovering fertility after stopping TRT: what the evidence shows on timeline and odds
+3. Enclomiphene, clomiphene, and hCG as fertility-preserving alternatives to TRT
+4. What to test before starting TRT, and why
+
+**DNA Fragmentation Cluster.** Goes deeper than the existing sperm-parameter overview (the existing "Does Sperm DNA Fragmentation Actually Matter?" piece anchors it):
+1. DFI testing methods compared: SCSA versus TUNEL versus Comet versus SCD
+2. Why a normal standard semen analysis can hide high DNA fragmentation
+3. DFI causes and thresholds explained in full
+
+### Continuing series
+
+These two series were already partway through their run before this Topic Map was restructured. They rank ahead of the newer Tier 2 and Tier 3 clusters because they are close to finished and each new entry compounds an existing series' internal linking:
+1. Sperm Parameter Series: Total Motile Sperm Count (TMSC), combining volume, concentration, and motility into one number and how to read all the parameters together
+2. Hormone Series: Thyroid (TSH), then SHBG
+
+### Tier 2
+
+**Male-Factor Conditions Cluster.** Named diagnoses in plain English, not just parameters (the existing Varicocele explainer anchors it):
+1. Azoospermia: obstructive versus non-obstructive, and what each means for a man's odds
+2. Oligozoospermia, asthenozoospermia, and teratozoospermia explained together as the "what my diagnosis is actually called" piece
+3. Hypogonadism: primary versus secondary, and how it differs from a normal aging-related testosterone decline
+4. Retrograde ejaculation
+5. Klinefelter syndrome
+6. Y-chromosome microdeletions
+7. IVF and ICSI: what each procedure is, and where male-factor testing fits in
+
+**Supplement Hub.** One comprehensive, evidence-honest reference covering CoQ10, L-carnitine, omega-3, zinc and folate, alpha-lipoic acid, and ashwagandha against every parameter, built around the Henriksen 2025 rule. This consolidates and cross-links the supplement evidence already scattered across the Sperm Parameter Series rather than repeating it.
+
+**Testing and Diagnostic Literacy Cluster** (the existing CLIA-certified-lab explainer anchors it):
+1. Test-retest variability: why one semen analysis is not the whole story
+2. The WHO 6th Edition manual explained: what it is, how thresholds are set
+3. At-home testing versus a clinic semen analysis: what is and is not comparable
+4. How to Read Your SwimScore Results: a plain-English guide to interpreting a semen analysis and hormone panel together
+
+### Tier 3: lifestyle and environmental factors
+
+Higher search volume, more competitive, so only the evidence-honest angle earns a place here, never a generic listicle. Within this cluster, prioritize the two most underserved topics first, ahead of the rest, which are already well covered elsewhere on the internet even if not yet on SwimScore:
+1. Cannabis, vaping, and sperm (underserved, prioritize)
+2. Paternal age and the male biological clock (underserved, prioritize)
+3. Smoking and sperm
+4. Diet and sperm quality
+5. Endocrine disruptors (BPA, phthalates, and similar)
+6. Heat exposure
+7. Alcohol
+8. Obesity
+9. Sleep and testosterone
+10. Exercise: moderate training versus overtraining
+
+Adding a wholly new topic area or cluster not listed above is a deliberate edit to this list, made when the brand decides to expand scope. It is not something the routine invents mid-run.
 
 ---
 
