@@ -134,6 +134,8 @@ Primary sources only. Never cite news coverage or blogs. If a claim cannot be ve
 
 Prices: any article that mentions a price must check every price live during the run, never from memory or an earlier article, and include "Prices checked [Month Year]". The full price rules, including the only permitted DNA fragmentation price comparison (SwimScore Advanced versus Legacy, both checked live), are in Part 2 of `SWIMSCORE_BLOG_WORKFLOW.md`. Name no other competitors unless verified the same way.
 
+HSA/FSA: never write an article about HSA/FSA eligibility. The only permitted mention is that SwimScore tests are cash pay, though often HSA/FSA eligible, with no claims about specific plans, reimbursement, or tax treatment.
+
 Citation format: every empirical or clinical claim cites a named primary source with author, year, journal, and a resolvable link (PubMed or DOI), linked inline. Every research deep-dive and clinical explainer ends with a numbered References section listing each source with its link. Never use vague source tags like "(PMC, 2024)", and never point multiple claims at the same non-specific tag. Each citation must identify one specific study.
 
 State every statistic with its population and source in one sentence. Example: "A 2018 meta-analysis of 12 RCTs (1,917 men) found L-carnitine improved progressive motility by 7.45% (Salas-Huetos et al., Advances in Nutrition, 2018)." A bare percentage with no population or source will not be cited and should not be used.
@@ -284,7 +286,7 @@ Morphology: Strongest Alpha-lipoic acid. Supporting L-carnitine. Skeptical CoQ10
 
 Topic choice is defined in Part 1 of `SWIMSCORE_BLOG_WORKFLOW.md`, which is authoritative. In short: fetch every live and draft article first, never keep a saved list of covered topics, and pick something a man worried about his fertility would realistically search for that the blog does not already answer, from these categories:
 
-- A. Cost and coverage (test prices, clinic vs at-home, insurance, HSA/FSA)
+- A. Cost and coverage (test prices, clinic vs at-home, insurance; no HSA/FSA articles)
 - B. Testing options and accuracy (kit types, reliability, how to prepare, sperm freezing)
 - C. Medications, supplements and substances and their effect on sperm
 - D. What a specific result number means

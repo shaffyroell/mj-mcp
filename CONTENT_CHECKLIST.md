@@ -104,6 +104,8 @@ SwimScore's goal is to be the source an AI assistant (ChatGPT, Claude, Perplexit
 - [ ] Every price was checked live this run, with "Prices checked [Month Year]".
       Any DNA fragmentation price comparison uses only SwimScore Advanced and
       Legacy, both checked live this run; otherwise it is left out.
+- [ ] No HSA/FSA article or section. The only HSA/FSA mention allowed: tests
+      are cash pay, though often HSA/FSA eligible.
 - [ ] Product tier chosen by the first matching rule (hormones -> Complete;
       DNA damage -> Advanced; else Essential), with **exactly two** product
       links, both to that tier (one in the body with descriptive anchor text,

@@ -69,7 +69,8 @@ query BlogArticles {
    man worried about his fertility would realistically search for, and that the
    blog doesn't already answer.
 
-   - **A. Cost and coverage:** test prices, clinic vs at-home, insurance, HSA/FSA
+   - **A. Cost and coverage:** test prices, clinic vs at-home, insurance. No
+     HSA/FSA articles (see the HSA/FSA rule in Part 2).
    - **B. Testing options and accuracy:** kit types, reliability, how to prepare,
      sperm freezing
    - **C. Medications, supplements and substances:** their effect on sperm
@@ -85,7 +86,7 @@ query BlogArticles {
    are welcome):
 
    - **A:** DNA fragmentation test cost; semen analysis cost clinic vs at-home;
-     HSA/FSA eligibility; sperm freezing cost
+     sperm freezing cost
    - **B:** count-only kits vs mail-in lab tests; how long to abstain before a
      semen analysis; sperm freezing and banking
    - **C:** hCG on TRT; finasteride; creatine; Ozempic/Mounjaro; SSRIs; anabolic
@@ -187,6 +188,15 @@ query BlogArticles {
   both, citing at least one sourced clinic price. If no clinic price can be
   sourced, write: "Clinic pricing varies and is often higher."
 - Name no other competitors unless verified the same way.
+
+### HSA/FSA
+
+- Never write an article about HSA/FSA eligibility or make HSA/FSA the subject
+  of a section.
+- The only permitted mention: SwimScore tests are cash pay, though often
+  HSA/FSA eligible. Use that wording (or a close equivalent) and nothing more
+  specific: no claims about a particular plan, reimbursement amounts, or tax
+  treatment.
 
 ### Fixed facts (use this exact wording)
 
