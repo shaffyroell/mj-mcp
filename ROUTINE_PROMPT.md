@@ -43,10 +43,12 @@ Do this end to end:
    Advanced; else Essential) and use exactly two product links, both to that
    tier. At least 2 body links to related live articles. Closing lines in
    italics, in order: tier line, clinic sign-up line linking
-   `/pages/for-clinics`, "Related reading:", not-medical-advice, CLIA / WHO 6th
+   `/pages/for-clinics`, "Related reading:", optional series "Next up",
+   not-medical-advice, CLIA / WHO 6th
    Edition. Produce an SEO meta title (~55-60 chars), a meta description
    (~150-160 chars), a URL handle, and a short summary. Body as clean semantic
-   HTML; do not repeat the title in the body.
+   HTML; do not repeat the title in the body. Follow the "Extra care" rules for
+   pricing, medications, symptoms, and myth verdicts in PART 2.
 5. Generate the hero image with `flux_generate.py` (16:9). IMAGE RULE: people
    must be men only, or a man with a woman (heterosexual couple). Never same-sex
    couples, never women-only, because SwimScore is a male-fertility brand.
