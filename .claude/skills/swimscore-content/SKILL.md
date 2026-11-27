@@ -211,6 +211,10 @@ State plainly when to see a doctor promptly (for example blood in semen with pai
 
 Every article of every type includes a section titled "What we are more skeptical about".
 
+### Extra Care: Pricing, Medications, Symptoms, Myth Verdicts
+
+These four areas carry the most legal, medical, and trust risk. The full rules are in Part 2 of `SWIMSCORE_BLOG_WORKFLOW.md` ("Extra care") and must be followed. The short version: every price and every description of what a SwimScore tier measures is read live from the source page in this run, compared like with like, with no promotional language and no judgments about competitors. Medication articles say plainly, near the top, not to stop, start, or change a prescribed medication without the prescriber, and give no dosing, cycling, or sourcing advice. Symptom articles put "When to see a doctor" in the first half, never diagnose or say "nothing to worry about", and never suggest a test replaces an exam. Myth verdicts match the strength of the evidence, say how strong it is, and treat "no studies" as "unclear", never as "doesn't hold up".
+
 ---
 
 ## Article Structure: Sperm Parameter Series
@@ -313,8 +317,9 @@ Article order is always: Key Takeaways (exactly three sentences), body, FAQ, num
 1. "Want to know your own numbers? [SwimScore <Tier>](<tier URL>) measures <what it tests> from home." The tier follows the Product Tier rule below.
 2. "If you're a clinic looking to offer fertility testing to your patients, sign up here." linking to /pages/for-clinics.
 3. "Related reading:" with 1 or 2 live SwimScore articles on the closest topic.
-4. A short "this is general education and not medical advice" line.
-5. "SwimScore uses CLIA-certified labs for all semen analysis and hormone testing, assessed against WHO 6th Edition clinical thresholds."
+4. Optional, for articles in a numbered series: "This is Part [N] of the SwimScore [Series]. Next up: [topic]." N comes from the live articles; the topic is a real, not-yet-covered one; never promise a date.
+5. A short "this is general education and not medical advice" line.
+6. "SwimScore uses CLIA-certified labs for all semen analysis and hormone testing, assessed against WHO 6th Edition clinical thresholds."
 
 ## Product Tier and Links
 

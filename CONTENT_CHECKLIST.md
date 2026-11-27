@@ -114,8 +114,27 @@ SwimScore's goal is to be the source an AI assistant (ChatGPT, Claude, Perplexit
 - [ ] Closing lines in italics, in order: (1) "Want to know your own numbers?"
       tier line, (2) "If you're a clinic looking to offer fertility testing to
       your patients, sign up here." linking `/pages/for-clinics`, (3) "Related
-      reading:" with 1-2 live articles, (4) not-medical-advice line, (5) CLIA /
-      WHO 6th Edition line.
+      reading:" with 1-2 live articles, (4) optional series "Next up" line,
+      (5) not-medical-advice line, (6) CLIA / WHO 6th Edition line.
+
+## Extra care (verify every one that applies)
+
+- [ ] **Pricing:** every price and every "SwimScore <Tier> measures..." claim
+      was read live from its source page this run; sources and dates are listed
+      in the run report; comparisons are like-for-like with inclusions stated;
+      no "cheapest/best value/save" language; no judgments about competitors;
+      "Prices checked [Month Year] and may have changed."
+- [ ] **Medications (C):** "do not stop, start, or change a prescribed
+      medication without the prescriber" appears near the top and in the FAQ;
+      no dosing, cycling, or sourcing advice; regulatory status exact; the
+      condition being treated is acknowledged; associations not called causes.
+- [ ] **Symptoms (E):** "When to see a doctor" is in the first half and names
+      the red flags; no diagnosis and no "nothing to worry about"; says an
+      at-home test does not replace an exam; product link comes after the
+      doctor guidance.
+- [ ] **Myth verdicts (G):** the verdict matches and states the evidence
+      strength; "no studies" is "unclear", not "doesn't hold up"; the verdict
+      does not read as permission for something risky.
 - [ ] Draft notes (category + why picked) saved in metafield
       `swimscore.draft_notes`, not in the article.
 - [ ] Hero image follows the image rules (men only, or a man with a woman;

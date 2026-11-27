@@ -136,7 +136,7 @@ query BlogArticles {
   still worth acting on.
 - **Myth articles (category G):** state the claim, give the verdict in the first
   paragraph (holds up / partly holds up / doesn't hold up / unclear), then the
-  evidence.
+  evidence. Follow the extra-care rules for myth verdicts below.
 
 ### Voice
 
@@ -169,7 +169,7 @@ query BlogArticles {
 - Every article includes a section titled **"What we are more skeptical about"**.
 - **Symptom articles (category E):** state when to see a doctor promptly (e.g.
   blood in semen with pain, a testicular lump). Never say testing replaces an
-  exam.
+  exam. Follow the extra-care rules for symptoms below.
 
 ### Prices (any article that mentions a price)
 
@@ -188,6 +188,7 @@ query BlogArticles {
   both, citing at least one sourced clinic price. If no clinic price can be
   sourced, write: "Clinic pricing varies and is often higher."
 - Name no other competitors unless verified the same way.
+- Follow the extra-care rules for pricing below.
 
 ### HSA/FSA
 
@@ -197,6 +198,71 @@ query BlogArticles {
   HSA/FSA eligible. Use that wording (or a close equivalent) and nothing more
   specific: no claims about a particular plan, reimbursement amounts, or tax
   treatment.
+
+### Extra care: pricing, medications, symptoms, myth verdicts
+
+These four areas carry the most legal, medical, and trust risk. Speak plainly,
+but never trade accuracy or safety for a cleaner sentence. When in doubt, leave
+the claim out.
+
+**Pricing and product claims**
+- Every price comes from the source page, read live in this run. List each
+  price with its source URL and the date checked in the run's final report so
+  a reviewer can verify it.
+- Compare like with like. State what each price includes (which tests, lab
+  report, shipping, consult). If you cannot confirm what a competitor's price
+  includes, leave the comparison out.
+- Facts only about competitors: price and what is included. No judgments on
+  their quality, accuracy, or service.
+- No "cheapest", "best value", "save X%", "lowest price", discount codes, or
+  promotional language.
+- Say prices can change: "Prices checked [Month Year] and may have changed."
+- What a SwimScore tier measures (closing line 1 and the body product link)
+  must come from that product's page, read live in this run. Never describe
+  a tier's contents from memory.
+
+**Medication and substance articles (category C)**
+- Near the top of the article, in plain words: "Do not stop, start, or change
+  the dose of a prescribed medication without talking to the doctor who
+  prescribed it." Repeat it in the FAQ.
+- No dosing advice, no cycling or "post-cycle" protocols, no sources or where
+  to buy, no compounded or grey-market products.
+- State regulatory status exactly: what the drug is FDA-approved for, and when
+  a use is off-label. Do not imply a drug is approved for male infertility
+  unless it is.
+- Weigh the reason for the medication. For antidepressants, hair-loss, weight,
+  or other drugs, say plainly that the condition being treated matters too,
+  and that alternatives are a conversation for the prescriber.
+- Anabolic steroids and non-prescribed testosterone: describe the harm to
+  sperm production plainly. No harm-reduction protocols.
+- Supplements: say they are not regulated like drugs and products vary, and
+  state the Henriksen 2025 finding.
+- Do not call an association a cause. Most medication data is observational;
+  say so.
+
+**Symptom articles (category E)**
+- Put a "When to see a doctor" section in the first half of the article, not
+  only in the FAQ. Say plainly that these need a prompt doctor visit: a lump,
+  swelling, or change in a testicle, even if painless; testicular pain;
+  blood in semen that keeps coming back, or comes with pain, fever, or trouble
+  urinating, or in a man over 40.
+- Never diagnose and never say "this is nothing to worry about". Say what
+  common harmless causes exist, then that only an exam can rule out the
+  serious ones.
+- Say plainly that an at-home semen test is not designed to diagnose
+  infection, cancer, or the cause of a symptom, and does not replace an exam.
+- Keep the product link low-key and after the doctor guidance.
+
+**Myth verdicts (category G)**
+- The verdict must match the strength of the evidence, and the verdict sentence
+  says how strong that evidence is (for example "doesn't hold up, based on
+  several large studies" or "unclear, the studies are small and conflicting").
+- "Doesn't hold up" only when good studies looked and found no meaningful
+  effect. No studies is not proof of no effect: use "unclear".
+- "Holds up" only when the effect is consistent across decent studies, and
+  say how big it is in plain terms.
+- Never turn a verdict into permission for something risky (for example, "the
+  laptop myth doesn't hold up, so heat doesn't matter").
 
 ### Fixed facts (use this exact wording)
 
@@ -239,8 +305,11 @@ query BlogArticles {
    2. *If you're a clinic looking to offer fertility testing to your patients,
       [sign up here](/pages/for-clinics).*
    3. *Related reading:* 1 or 2 live SwimScore articles on the closest topic.
-   4. Not-medical-advice line.
-   5. *SwimScore uses CLIA-certified labs for all semen analysis and hormone
+   4. Optional, for articles in a numbered series: *This is Part [N] of the
+      SwimScore [Series]. Next up: [topic].* Find N from the live articles.
+      Name a real, not-yet-covered topic in that series; never promise a date.
+   5. Not-medical-advice line.
+   6. *SwimScore uses CLIA-certified labs for all semen analysis and hormone
       testing, assessed against WHO 6th Edition clinical thresholds.*
 
 Body HTML is clean and semantic: `<p>`, `<h2>`, `<a href>`, `<em>`, `<hr>`
