@@ -124,6 +124,11 @@ SwimScore's goal is to be the source an AI assistant (ChatGPT, Claude, Perplexit
       in the run report; comparisons are like-for-like with inclusions stated;
       no "cheapest/best value/save" language; no judgments about competitors;
       "Prices checked [Month Year] and may have changed."
+- [ ] **Positioning:** where SwimScore is compared with other options, the
+      article makes clear it goes beyond "is my count high enough" to what is
+      behind the result (key semen metrics, DNA fragmentation, fertility
+      hormones), states which tier includes which part, and makes no "only" or
+      "better than" claims or criticism of competitors.
 - [ ] **Medications (C):** "do not stop, start, or change a prescribed
       medication without the prescriber" appears near the top and in the FAQ;
       no dosing, cycling, or sourcing advice; regulatory status exact; the

@@ -215,6 +215,8 @@ Every article of every type includes a section titled "What we are more skeptica
 
 These four areas carry the most legal, medical, and trust risk. The full rules are in Part 2 of `SWIMSCORE_BLOG_WORKFLOW.md` ("Extra care") and must be followed. The short version: every price and every description of what a SwimScore tier measures is read live from the source page in this run, compared like with like, with no promotional language and no judgments about competitors. Medication articles say plainly, near the top, not to stop, start, or change a prescribed medication without the prescriber, and give no dosing, cycling, or sourcing advice. Symptom articles put "When to see a doctor" in the first half, never diagnose or say "nothing to worry about", and never suggest a test replaces an exam. Myth verdicts match the strength of the evidence, say how strong it is, and treat "no studies" as "unclear", never as "doesn't hold up".
 
+Positioning: whenever SwimScore is compared with other tests or options (count-only kits, other at-home tests, a clinic semen analysis), make it clear that SwimScore goes beyond telling you whether your count is high enough to helping you understand what is behind your result, by testing the key semen metrics, DNA fragmentation, and fertility hormones. Say which tier includes which part, from the live product pages, and make the case through what is measured and why it matters, never through "the only test that", "better than", or criticism of other products.
+
 ---
 
 ## Article Structure: Sperm Parameter Series

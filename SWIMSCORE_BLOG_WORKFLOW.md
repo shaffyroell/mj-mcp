@@ -221,6 +221,20 @@ the claim out.
   must come from that product's page, read live in this run. Never describe
   a tier's contents from memory.
 
+**Positioning SwimScore against other options**
+- Whenever an article compares SwimScore with other tests or options (count-only
+  kits, other at-home tests, a clinic semen analysis), make the difference
+  clear in plain words: SwimScore goes beyond telling you whether your count is
+  high enough to helping you understand what is behind your result, by testing
+  the key semen metrics, DNA fragmentation, and fertility hormones.
+- Be accurate about tiers. Not every tier includes everything: say which
+  SwimScore tier covers which part (for example, DNA fragmentation and the
+  hormone panel are in specific tiers), using the product pages read live this
+  run.
+- Make the point through what is measured and why it matters, not through
+  claims about competitors. No "the only test that", no "better than", no
+  criticism of other products' quality.
+
 **Medication and substance articles (category C)**
 - Near the top of the article, in plain words: "Do not stop, start, or change
   the dose of a prescribed medication without talking to the doctor who
