@@ -5,9 +5,14 @@ articles, generating an on-brand hero image, and publishing to Shopify as a
 scheduled draft.
 
 **The goal of every article is to drive clients (men and couples) and clinics
-to SwimScore.** Every piece must establish scientific credibility, demonstrate
-intellectual honesty, and be practically useful, per the `swimscore-content`
-skill. This document is the operational runbook that wraps that skill.
+to SwimScore.**
+
+**Which document wins.** This runbook is authoritative for topic choice
+(Part 1), the writing rules (Part 2), and article structure, product tier,
+links, and closing lines (Part 3). The `swimscore-content` skill
+(`.claude/skills/swimscore-content/SKILL.md`) adds voice detail, worked
+examples, the per-content-type section orders, and key clinical facts. If the
+skill and this runbook ever disagree, follow this runbook.
 
 ---
 
@@ -17,144 +22,263 @@ skill. This document is the operational runbook that wraps that skill.
   environment, and the environment's network policy must allow outbound HTTPS
   (Network access = Full, or Custom allowlisting `api.bfl.ai` and `*.bfl.ai`).
 - **Shopify** must be connected (MCP). Store: SwimScore, `www.myswimscore.com`.
-- The **`swimscore-content` skill** is the source of truth for voice, research
-  standards, and article structure. Always follow it. This runbook never
-  overrides it. It is **committed in this repo** at
-  `.claude/skills/swimscore-content/SKILL.md`, so it is available automatically
-  whenever the repo is cloned (no separate attachment required).
+- **Live price checks** (Part 2, Prices) need outbound web access to the pages
+  being priced (for example `www.myswimscore.com` and `givelegacy.com`). If a
+  price cannot be checked live in this run, follow the Prices rules for leaving
+  it out. Never fall back to a remembered price.
+- The **`swimscore-content` skill** is committed in this repo at
+  `.claude/skills/swimscore-content/SKILL.md`.
 
 ---
 
-## 1. Discover existing content (avoid duplicates, gather link targets)
+## 1. Discover existing content
 
-Query the Shopify Admin API for every article on the blog, published or draft,
-so you never duplicate a topic, so you can collect internal-link targets, and
-so you can match the house image style. Always query live. No document in this
-repo tracks what is already published, and none should ever be edited to track
-it; that state goes stale the moment a new draft is created and nothing here
-would know.
+Query the Shopify Admin API for every article on the blog, published or draft.
+Always query live. No document in this repo tracks what is already published,
+and none should ever be edited to track it.
 
 ```graphql
 query BlogArticles {
-  blogs(first: 5) {
-    edges { node { id handle title
-      articles(first: 50, reverse: true) {
-        edges { node { id title handle publishedAt isPublished tags image { url altText } } }
+  blog(id: "gid://shopify/Blog/92195225782") {
+    articles(first: 100, reverse: true) {
+      pageInfo { hasNextPage endCursor }
+      nodes {
+        id title handle publishedAt isPublished tags
+        image { url altText }
+        notes: metafield(namespace: "swimscore", key: "draft_notes") { value }
       }
-    } }
+    }
   }
 }
 ```
 
 - The main blog is **News** (`gid://shopify/Blog/92195225782`, handle `news`).
   Publish there unless told otherwise.
-- Read 1-2 full article bodies (query the `body` field by article ID) to
-  re-calibrate voice before writing.
+- Paginate until `hasNextPage` is false.
+- Read 1-2 full article bodies (query `body` by article ID) to re-calibrate
+  voice before writing.
 
-## 2. Choose the topic
+---
 
-Coverage is computed live, every run, from the query above. It is never read
-from a cached "done" list anywhere in this repo.
+## PART 1: CHOOSE THE TOPIC
 
-1. Pull the **Topic Map** from the `swimscore-content` skill (its `## Topic
-   Map` section). This is the ranked list of what SwimScore wants authority
-   on. It never records what is already published.
-2. Walk the Topic Map top to bottom, in the order its sections are written
-   (Tier 1 clusters, then the continuing series, then Tier 2, then Tier 3),
-   and within each cluster or series, walk its topics in the order listed.
-   For each topic, check it against the live article list from step 1: does
-   an existing article substantively cover this exact topic, not just
-   mention it in passing or share a generic tag with it? A shared tag like
-   "Testosterone" or "Hormones" does not by itself mean the topic is
-   covered; several unrelated articles carry those tags. When a title is
-   ambiguous, open that article's body or summary to confirm before
-   deciding either way. A parenthetical note in the Topic Map naming an
-   existing article as a cluster's anchor is context, not a substitute for
-   this live check on every other topic in that cluster.
-3. The first topic in Topic Map order with no substantive existing article is
-   the one to write. State it and a one-line justification before writing.
-   If the user named a topic directly, use that instead and skip this
-   selection process.
-4. If every topic in the Topic Map is already covered, say so explicitly.
-   Either propose 2 to 3 candidate topics adjacent to the existing series for
-   a human to approve, or stop and ask. Do not silently repeat a topic, and
-   do not invent a new one and start writing without flagging it first.
-5. If the topic belongs to a numbered sub-series (for example, the Lifestyle
-   Series' "Part X of the SwimScore Lifestyle Series" articles), determine
-   the next part number by finding the highest Part N already published in
-   that series from the actual article bodies, and use N+1. Do not guess or
-   recall the number from memory; a stale guess is exactly the failure mode
-   this whole process exists to avoid.
+1. Fetch every article in the Shopify News blog (published and draft), as in
+   step 1 above. Never keep a saved list of covered topics.
 
-## 3. Research (real sources only)
+2. Choose a topic from the categories below. Use common sense: pick something a
+   man worried about his fertility would realistically search for, and that the
+   blog doesn't already answer.
 
-Follow the skill's Research Standards. Read actual studies (PubMed, PMC,
-guidelines: AUA, EAU, ASRM, WHO). For deep/clinical topics, run a dedicated
-research pass and produce a citable evidence brief with:
+   - **A. Cost and coverage:** test prices, clinic vs at-home, insurance, HSA/FSA
+   - **B. Testing options and accuracy:** kit types, reliability, how to prepare,
+     sperm freezing
+   - **C. Medications, supplements and substances:** their effect on sperm
+   - **D. What a specific result number means**
+   - **E. Symptoms and conditions** people search by name or appearance
+   - **F. Life events and timing:** vasectomy, miscarriage, before IVF or trying,
+     regeneration, illness
+   - **G. Myths and everyday "does X affect sperm" questions**
+   - **H. Lifestyle and environment:** exercise, sleep, diet, weight, heat,
+     alcohol, smoking, microplastics and chemicals
 
-- Specific study design, sample size, and numeric findings.
-- Citations linked inline with a resolvable PubMed or DOI link, author, year,
-  and journal named in the sentence, per the skill's Research Standards. Never
-  a vague tag like "(PMC, 2024)."
-- **Explicit honesty flags**: what is thin, contested, or unverified. Do not cite
-  claims you could not verify in a primary source. Never overclaim pregnancy or
-  live-birth benefit. Apply the Henriksen 2025 rule where supplements come up.
+   **Topic ideas** (a starting point, not a queue; new topics in the same spirit
+   are welcome):
 
-## 4. Write the article (invoke the `swimscore-content` skill)
+   - **A:** DNA fragmentation test cost; semen analysis cost clinic vs at-home;
+     HSA/FSA eligibility; sperm freezing cost
+   - **B:** count-only kits vs mail-in lab tests; how long to abstain before a
+     semen analysis; sperm freezing and banking
+   - **C:** hCG on TRT; finasteride; creatine; Ozempic/Mounjaro; SSRIs; anabolic
+     steroids and prednisone; ashwagandha; tongkat ali; caffeine; lubricants
+   - **D:** morphology 1%, 2%, 3%; sperm count needed to get pregnant; DFI of 20%
+     or 35%; low semen volume
+   - **E:** low sperm count signs and causes; watery or thick semen; yellow,
+     brown or bloody semen; how common male infertility is
+   - **F:** semen analysis after vasectomy; miscarriage and sperm; how long sperm
+     takes to regenerate; testing before IVF; fever or COVID and sperm
+   - **G:** phone in pocket; laptop on lap; boxers vs briefs; daily ejaculation
+     and sperm count; soy
+   - **H:** microplastics and sperm; exercise and cycling; endocrine disruptors
+     and PFAS; sleep; diet
 
-Use the skill's structure template for the content type (clinical explainer,
-sperm-parameter series, hormone series, lifestyle, or product/testing). Hard
-rules, checked before finishing:
+3. Rules for picking:
+   - **Variety:** don't use the same category as either of the last 2 articles.
+     "Last 2" means the two most recent articles by `publishedAt` (or scheduled
+     publish date), drafts included. Read their category from the
+     `swimscore.draft_notes` metafield; for older articles that have no note,
+     infer the category from the title and body.
+   - **No repeats:** skip any topic where an existing article already answers
+     the same question. Same subject isn't enough to count as covered: "What is
+     DFI?" does not cover "How much does a DFI test cost?". If unsure, open the
+     article body to check.
+   - **Overlap:** if a new topic touches a live article, narrow the new one to
+     its own question and link to the live one.
+   - **Never stop for lack of ideas:** if the topic ideas run out, come up with a
+     new question in the category with the fewest recent articles.
 
-- **NO EM-DASHES and no en-dashes. Zero. Scan explicitly.** Use commas, colons,
-  periods, or restructure.
-- Plain English. Explain every mechanism and term in the same breath. Prose, not
-  bullet lists, for practical advice.
-- Confident where evidence supports it, plainly honest where it does not.
-  Include a "what we are more skeptical about" beat where relevant.
-- No supplement-brand language ("boost", "supercharge", "game changer"), no
-  wellness clichés ("fertility journey"), no marketing superlatives.
-- **Internal links (SEO + the client/clinic goal):** link naturally to relevant
-  published articles and pages. Known targets:
-  - Hormone series: `/blogs/news/what-your-fsh-level-is-actually-telling-you-about-your-fertility`,
-    `/blogs/news/what-your-lh-level-reveals-about-your-testosterone-and-fertility`,
-    `/blogs/news/what-your-testosterone-level-actually-tells-you-about-your-fertility`,
-    `/blogs/news/what-your-estradiol-level-reveals-about-your-fertility`,
-    `/blogs/news/what-your-prolactin-level-is-telling-you-about-your-fertility`
-  - Parameters: `/blogs/news/does-your-sperm-count-actually-matter-what-the-research-shows-on-concentration`,
-    `/blogs/news/does-sperm-dna-fragmentation-actually-matter-heres-what-the-research-shows`,
-    `/blogs/news/what-does-sperm-morphology-actually-tell-you-an-honest-look-at-the-research`
-  - Credibility: `/blogs/news/what-is-a-clia-certified-lab-and-why-does-it-matter-for-semen-testing`
-  - **Client CTA (product):** `/products/swimscore-complete` (the full panel:
-    semen parameters + DNA fragmentation + hormones). Other products:
-    `/products/swimscore-essential`, `/products/swimscore-advanced`.
-  - **Clinic CTA (required where natural):** `/pages/for-clinics`.
-  - Other pages: `/pages/what-we-measure`, `/pages/how-it-works`, `/pages/couples`.
-- **Closing lines** (italic), per skill:
-  - A clinic CTA line pointing to `/pages/for-clinics` when the topic suits it.
-  - For clinical topics: a "not medical advice" line.
-  - Always end with: *SwimScore uses CLIA-certified labs for all semen analysis
-    and hormone testing, assessed against WHO 6th Edition clinical thresholds.*
-- Write the body as clean semantic HTML: `<p>`, `<h2>` for section headings,
-  `<a href>`, `<em>`, `<hr>`. Do not repeat the title inside the body.
-- Also produce: an **SEO meta title** (~55-60 chars), an **SEO meta description**
-  (~150-160 chars), a **URL handle**, and a 1-2 sentence **summary**.
-- **AI/LLM discoverability (GEO):** follow the skill's "Writing to Be Cited"
-  and "Bylines, Reviewer, and Attribution" sections. A three-sentence Key
-  Takeaways block directly under the title; question-phrased `<h2>` headers
-  where natural with an answer-first opening sentence; self-contained
-  sections and claims; the brand named explicitly in fact-bearing sentences;
-  a named author and reviewer line; and a closing FAQ (3-5 search-phrased
-  questions, required for every content type) placed after Our Take, followed
-  by a numbered References section for research deep-dives and clinical
-  explainers, all before the italic closing lines.
+4. **Draft notes (not the article):** write one line giving the category and
+   why this topic was picked, for example
+   `C: Medications. "Does creatine affect sperm" is a common search and no live article answers it.`
+   Shopify articles have no built-in notes field, so store this line in the
+   article metafield `swimscore.draft_notes` (type `single_line_text_field`).
+   It is never shown in the article body. Also state it in the run's final
+   report.
 
-**Required quality gate:** before finalizing, run
-[`CONTENT_CHECKLIST.md`](./CONTENT_CHECKLIST.md) end to end and fix anything that
-fails. It verifies the four things that matter most: we are not pushing meds or
-supplements, everything we say is true to the cited sources, we are genuinely
-helpful for navigating the mixed research and online noise, and it is simple
-enough for any everyday man to understand.
+---
+
+## PART 2: WRITE THE ARTICLE
+
+### Stance
+
+- Read across mixed research and give an honest, practical view.
+- Default structure of the argument: what we know, what we don't know, why it's
+  still worth acting on.
+- **Myth articles (category G):** state the claim, give the verdict in the first
+  paragraph (holds up / partly holds up / doesn't hold up / unclear), then the
+  evidence.
+
+### Voice
+
+- A knowledgeable friend who has read the studies, writing as "we".
+- Confident where evidence is strong, plain about uncertainty.
+- Explain every technical term in plain English the first time it appears.
+- Test: if a paragraph could appear unchanged in a textbook, rewrite it.
+
+### Research rules
+
+- Primary sources only. Never cite news coverage or blogs.
+- Every finding states study design and sample size in the same sentence.
+- Every claim cites one specific study: Author et al., Journal, Year, with a
+  PubMed or DOI link.
+- Label weak or contested evidence as weak or contested.
+- If a claim can't be verified, delete it.
+
+### Pregnancy rule
+
+- Never claim a pregnancy or live-birth benefit without direct evidence. Better
+  sperm numbers do not equal more pregnancies.
+- Any article that discusses supplements must state the Henriksen 2025 finding:
+  across 50 trials, no supplement improved pregnancy or live-birth rates, though
+  some improved motility. Do not use it to dismiss the topic.
+
+### No pushing treatments
+
+- The only calls to action: know your numbers, get tested, talk to a clinician.
+- Describe prescription treatments as clinician-managed.
+- Every article includes a section titled **"What we are more skeptical about"**.
+- **Symptom articles (category E):** state when to see a doctor promptly (e.g.
+  blood in semen with pain, a testicular lump). Never say testing replaces an
+  exam.
+
+### Prices (any article that mentions a price)
+
+- Check every price live during this run. Never use a price from memory or an
+  earlier article.
+- Include "Prices checked [Month Year]".
+- Third-party clinic or lab prices: give a sourced range and label it as such.
+- **DNA fragmentation price comparison:** allowed ONLY if both prices below were
+  checked live this run. Otherwise leave the comparison out entirely.
+  - SwimScore Advanced: `/products/swimscore-advanced`
+  - Legacy: `givelegacy.com` (the product that includes DNA fragmentation)
+
+  Write it as a range ("At-home DNA fragmentation testing ranges from $X
+  (SwimScore Advanced) to $Y (Legacy)") and state what each price includes.
+  Then state that clinic DNA fragmentation testing is often more expensive than
+  both, citing at least one sourced clinic price. If no clinic price can be
+  sourced, write: "Clinic pricing varies and is often higher."
+- Name no other competitors unless verified the same way.
+
+### Fixed facts (use this exact wording)
+
+- WHO 6th Edition thresholds: 32% progressive motility, 16 million per mL,
+  39 million total, 4% morphology.
+- DNA Fragmentation Index (DFI) bands: below 15%, 15 to 30%, above 30%.
+- About 72 days to make sperm, so "at least 12 weeks" before retesting.
+- Enclomiphene is used off-label.
+
+### Banned
+
+- Em-dashes and en-dashes. No exceptions. Scan explicitly before finishing.
+- "boost", "supercharge", "game changer", and similar supplement-marketing words.
+- "fertility journey" and other wellness cliches.
+- "industry-leading", "revolutionary", and other hype.
+- Defensive or hedging openers.
+
+---
+
+## PART 3: STRUCTURE
+
+### Title
+
+- Use the reader's question in their own words, e.g. "Does Creatine Affect
+  Sperm?"
+- Do not use "What the Research Actually Shows" if the newest live article
+  already uses it.
+
+### Order of the article
+
+1. **Key Takeaways:** exactly three sentences.
+2. **Body:** question headings, each answered in its first sentence. Prose, no
+   bullet lists. Use the fixed section order for the content type (hormone,
+   sperm-parameter, clinical, lifestyle, testing) from the skill.
+3. **FAQ.**
+4. **Numbered References.**
+5. **Closing lines, in italics, in this order:**
+   1. *Want to know your own numbers? [SwimScore &lt;Tier&gt;](&lt;tier URL&gt;)
+      measures &lt;what it tests&gt; from home.*
+   2. *If you're a clinic looking to offer fertility testing to your patients,
+      [sign up here](/pages/for-clinics).*
+   3. *Related reading:* 1 or 2 live SwimScore articles on the closest topic.
+   4. Not-medical-advice line.
+   5. *SwimScore uses CLIA-certified labs for all semen analysis and hormone
+      testing, assessed against WHO 6th Edition clinical thresholds.*
+
+Body HTML is clean and semantic: `<p>`, `<h2>`, `<a href>`, `<em>`, `<hr>`
+(the Key Takeaways, FAQ, and References may use `<ul>`/`<ol>`). Do not repeat
+the title in the body.
+
+### AI-citation rules
+
+- Every key claim must make sense when quoted on its own.
+- Name SwimScore explicitly in key fact sentences.
+
+### Product tier (apply the first rule that matches)
+
+1. Article involves **hormones** (TRT, hCG, steroids, GLP-1/weight,
+   testosterone, full workup) -> **SwimScore Complete**,
+   `/products/swimscore-complete`
+2. Article involves **DNA damage** (DFI, miscarriage, before IVF, paternal age,
+   comparing at-home tests) -> **SwimScore Advanced**,
+   `/products/swimscore-advanced`
+3. **Everything else** -> **SwimScore Essential**, `/products/swimscore-essential`
+
+### Product links
+
+- **Exactly two product links per article, both to the tier chosen above:**
+  1. One in the body, where the article explains how to find out your own
+     number. Descriptive anchor text, e.g. "SwimScore Advanced measures DNA
+     fragmentation at home". Never "buy now" or "click here".
+  2. Closing line 1.
+- You may mention the next tier up once in plain text, without a link.
+
+### Other links
+
+- At least 2 links to related live SwimScore articles in the body. Only link to
+  handles confirmed live in step 1.
+- `/pages/for-clinics` in closing line 2, worded as: "If you're a clinic looking
+  to offer fertility testing to your patients, sign up here."
+
+### SEO fields
+
+Also produce an **SEO meta title** (~55-60 chars), an **SEO meta description**
+(~150-160 chars), a **URL handle**, and a 1-2 sentence **summary**.
+
+### Quality gate
+
+Before finalizing, run [`CONTENT_CHECKLIST.md`](./CONTENT_CHECKLIST.md) end to
+end and fix anything that fails.
+
+---
 
 ## 5. Generate the hero image (FLUX)
 
@@ -203,36 +327,30 @@ PY
    - `body`: the HTML. `summary`: the teaser HTML. `handle`: the SEO handle.
    - `tags`: relevant topic tags.
    - `image`: `{ url: <resourceUrl>, altText: <descriptive, relevant alt text> }`.
-   - **SEO metafields**:
-     `{ namespace: "global", key: "title_tag", type: "single_line_text_field", value: <meta title> }`
-     and the same with `key: "description_tag"` for the meta description.
+   - **Metafields**:
+     - `{ namespace: "global", key: "title_tag", type: "single_line_text_field", value: <meta title> }`
+     - `{ namespace: "global", key: "description_tag", type: "single_line_text_field", value: <meta description> }`
+     - `{ namespace: "swimscore", key: "draft_notes", type: "single_line_text_field", value: <category and reason, from Part 1 step 4> }`
    - **Draft + schedule**: create with `isPublished: false` (a hidden draft for
      review) and `publishDate` set to the intended posting time (ISO 8601 UTC).
      **Gotcha:** `articleUpdate` re-evaluates the publish state, so if you later
      edit the article you MUST pass `isPublished: false` again or Shopify can
      flip the draft live (or schedule it) when a `publishDate` is present. Always
      read back `isPublished` and confirm it is `false`.
-     To arm true auto-publish at that time, set `isPublished: true` (Shopify then
-     treats a future `publishDate` as scheduled). Default policy: leave as a
-     hidden draft and only arm auto-publish after the content has been reviewed,
-     unless the user has authorized auto-publish.
+     Default policy: leave as a hidden draft and only arm auto-publish after the
+     content has been reviewed, unless the user has authorized auto-publish.
 3. **Verify** by reading back `id, handle, isPublished, publishedAt, image.url,
-   metafields`. The image URL should be on `cdn.shopify.com`.
+   metafields` (including `swimscore.draft_notes`). The image URL should be on
+   `cdn.shopify.com`.
 
 ## 7. Scheduling / the routine
 
-A Claude routine (scheduled trigger) can run this whole workflow on a cadence.
-Each run should: discover existing articles, pick the next priority topic,
-research, write per the skill, generate a compliant hero image, and create the
-Shopify draft with SEO set and a `publishDate` on the desired posting slot.
-
-**Publish policy** (set by the user):
-- *Draft for review* (safer for medical content): create `isPublished: false`
-  and notify for human review before it goes live.
-- *Auto-publish*: create scheduled (`isPublished: true`, future `publishDate`).
-
-Recommended posting slot: a weekday morning US Eastern. Keep a buffer between
-draft creation and the publish date for review.
+A Claude routine (scheduled trigger) runs this whole workflow on a cadence. Each
+run: discover existing articles, choose a topic per Part 1, research and write
+per Part 2 and Part 3, generate a compliant hero image, and create the Shopify
+draft with SEO and draft notes set and a `publishDate` on the desired posting
+slot. Recommended posting slot: a weekday morning US Eastern, with a buffer
+between draft creation and the publish date for review.
 
 ---
 
@@ -242,21 +360,15 @@ draft creation and the publish date for review.
 | --- | --- |
 | Store | SwimScore, `www.myswimscore.com` |
 | News blog id | `gid://shopify/Blog/92195225782` (handle `news`) |
-| Product (full panel) | `/products/swimscore-complete` (`gid://shopify/Product/8501242658998`) |
-| Clinic page | `/pages/for-clinics` |
+| Topic categories | A Cost, B Testing, C Meds/supplements/substances, D Result numbers, E Symptoms/conditions, F Life events, G Myths, H Lifestyle/environment |
+| Variety rule | Not the same category as either of the last 2 articles |
+| Draft notes | metafield `swimscore.draft_notes`: category + why picked |
+| Product tier | Hormones -> Complete; DNA damage -> Advanced; else Essential |
+| Product links | Exactly 2, both to the chosen tier (body + closing line 1) |
+| Clinic page | `/pages/for-clinics` (closing line 2, "sign up here") |
 | Hero image size | 1456 x 816, optimized JPG |
 | Image people rule | Men, or man + woman couple. Never same-sex or women-only. |
-| Image feel | Relatable, realistic, everyday. Not fashion models. |
 | SEO meta title | metafield `global.title_tag` (~55-60 chars) |
 | SEO meta description | metafield `global.description_tag` (~150-160 chars) |
 | Hard writing rule | No em-dashes or en-dashes, ever |
 | Every article ends with | italic CLIA / WHO 6th Edition line |
-
-## Key clinical facts to always get right (from the skill)
-
-WHO 6th Edition: progressive motility 32%, concentration 16 M/mL, total count
-39 M/ejaculate, morphology 4% (Kruger). DFI: <15% good, 15-30% moderate, >30%
-high. Spermatogenesis cycle ~72 days, so always say "at least 12 weeks" for
-intervention protocols. Intratesticular testosterone is 50-100x serum. LH
-~1.5-9.3 mIU/mL, FSH ~1.0-7.6 mIU/mL. Enclomiphene is off-label, not
-FDA-approved for male infertility.

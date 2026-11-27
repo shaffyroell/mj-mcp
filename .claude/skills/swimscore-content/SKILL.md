@@ -128,7 +128,11 @@ Distinguish between types of evidence:
 
 Call out study limitations honestly. Small sample, short duration, no placebo control, heterogeneous populations, say so where relevant.
 
-The Henriksen 2025 rule. This is the most comprehensive recent analysis in male fertility supplements, 50 RCTs, 4,800+ participants. It found no statistically significant effect of any supplement on pregnancy or live birth rates. The correct framing when relevant: the same study confirmed motility improvements from carnitine and CoQ10. The pregnancy question is a separate and harder question, pregnancy depends on many variables beyond any single sperm parameter. Do not dismiss the study. Do not over-lean on it. Do not use it to shut down the supplement conversation entirely.
+The Henriksen 2025 rule. This is the most comprehensive recent analysis in male fertility supplements, 50 RCTs, 4,800+ participants. It found no statistically significant effect of any supplement on pregnancy or live birth rates. The correct framing when relevant: the same study confirmed motility improvements from carnitine and CoQ10. The pregnancy question is a separate and harder question, pregnancy depends on many variables beyond any single sperm parameter. Do not dismiss the study. Do not over-lean on it. Do not use it to shut down the supplement conversation entirely. Any article that discusses supplements must state this finding: across 50 trials, no supplement improved pregnancy or live-birth rates, though some improved motility.
+
+Primary sources only. Never cite news coverage or blogs. If a claim cannot be verified in a primary source, delete it.
+
+Prices: any article that mentions a price must check every price live during the run, never from memory or an earlier article, and include "Prices checked [Month Year]". The full price rules, including the only permitted DNA fragmentation price comparison (SwimScore Advanced versus Legacy, both checked live), are in Part 2 of `SWIMSCORE_BLOG_WORKFLOW.md`. Name no other competitors unless verified the same way.
 
 Citation format: every empirical or clinical claim cites a named primary source with author, year, journal, and a resolvable link (PubMed or DOI), linked inline. Every research deep-dive and clinical explainer ends with a numbered References section listing each source with its link. Never use vague source tags like "(PMC, 2024)", and never point multiple claims at the same non-specific tag. Each citation must identify one specific study.
 
@@ -195,6 +199,16 @@ Never say: "industry-leading," "revolutionary," "the only test that...", credibi
 
 Opens with a Key Takeaways block (three self-contained, quotable sentences, see Writing to Be Cited) directly under the title, and closes with an FAQ per the same section.
 
+### Myth Articles (category G)
+
+State the claim, then give the verdict in the first paragraph: holds up, partly holds up, doesn't hold up, or unclear. Then the evidence. Still include a "What we are more skeptical about" section, an FAQ, and References.
+
+### Symptom Articles (category E)
+
+State plainly when to see a doctor promptly (for example blood in semen with pain, or a testicular lump). Never say testing replaces an exam.
+
+Every article of every type includes a section titled "What we are more skeptical about".
+
 ---
 
 ## Article Structure: Sperm Parameter Series
@@ -204,7 +218,7 @@ Opens with a Key Takeaways block (three self-contained, quotable sentences, see 
 2. What [Metric] Actually Is: Plain-language explanation. What it measures, how, the WHO threshold, why that threshold matters physiologically.
 3. What Drives [Metric]: The biology of what causes it to be high or low, plain English.
 4. What the Research Shows: Evidence section, intervention by intervention. Mechanism first, then best evidence with specific study details, then honest assessment of effect size and study quality. Lead with the strongest.
-5. What We're More Skeptical About: Commonly recommended supplements or interventions where the evidence is thinner. This builds more trust than anything else.
+5. What We Are More Skeptical About: Commonly recommended supplements or interventions where the evidence is thinner. This builds more trust than anything else.
 6. The Pregnancy Question: Address pregnancy outcomes honestly every time, using the Henriksen 2025 framing. Pregnancy is not a single-variable outcome.
 7. How to Think About This Practically: Prose, not bullets. Who this is most relevant for, which interventions to prioritize, minimum 12 weeks, role of hormone testing, measure before and after.
 8. Our Take: 2-3 paragraphs. What we know, what we don't, why it's still worth acting on. End with a practical call to action.
@@ -266,74 +280,21 @@ Morphology: Strongest Alpha-lipoic acid. Supporting L-carnitine. Skeptical CoQ10
 
 ---
 
-## Topic Map (What We Want Authority On)
+## Topic Categories (choosing what to write)
 
-This is the durable list of topics SwimScore wants to be the cited authority on, grouped by series and cluster and given in priority order. It is a content-strategy artifact: edit it only when the brand deliberately adds, drops, or reprioritizes a topic area.
+Topic choice is defined in Part 1 of `SWIMSCORE_BLOG_WORKFLOW.md`, which is authoritative. In short: fetch every live and draft article first, never keep a saved list of covered topics, and pick something a man worried about his fertility would realistically search for that the blog does not already answer, from these categories:
 
-This list must never record which topics are already published, drafted, or done. That status changes every time an article goes out, this list does not get edited nearly that often, and the two drift out of sync if status ever gets written here, which is exactly what happened before this section was rewritten. Coverage is never cached in this file or anywhere else in the repo. Every time the topic for a new article is chosen, always check the current articles on the site first: query the Shopify blog live and determine what is actually covered from the real article list, never from memory of what this list says or from a note left in a prior draft. See "Choosing a Topic" in `SWIMSCORE_BLOG_WORKFLOW.md` for that procedure. This applies to every cluster below exactly the same way it applies to the two original series.
+- A. Cost and coverage (test prices, clinic vs at-home, insurance, HSA/FSA)
+- B. Testing options and accuracy (kit types, reliability, how to prepare, sperm freezing)
+- C. Medications, supplements and substances and their effect on sperm
+- D. What a specific result number means
+- E. Symptoms and conditions people search by name or appearance
+- F. Life events and timing (vasectomy, miscarriage, before IVF or trying, regeneration, illness)
+- G. Myths and everyday "does X affect sperm" questions
+- H. Lifestyle and environment (exercise, sleep, diet, weight, heat, alcohol, smoking, microplastics and chemicals)
 
-A few topics below already anchor a published article (noted in parentheses as context, not as a status field to maintain). That published piece is a foundation the cluster builds on, not proof the surrounding cluster is finished; check live coverage for every subtopic individually.
+Do not use the same category as either of the last 2 articles. Skip a topic only when an existing article already answers the same question; sharing a subject is not enough. If a topic overlaps a live article, narrow it to its own question and link to the live one. The topic ideas in the runbook are a starting point, not a queue, and the routine never stops for lack of ideas.
 
-### Tier 1: own first
-
-**Results Interpretation Cluster.** The "what does my number mean" cluster, the highest-intent search and AI-assistant queries in the category. One piece per parameter-and-result-state combination:
-1. Low count with normal motility: what it means and what to check next
-2. A normal semen analysis but still not conceiving: what a normal result does not rule out
-3. High DNA fragmentation behind an otherwise normal semen analysis
-4. Low testosterone with high LH versus normal or low LH: what the pattern points to
-5. TMSC thresholds and how they map to IUI, IVF, and ICSI
-
-**TRT and Fertility Cluster.** TRT is one of the most common and underrecognized causes of male infertility, and one of the highest-value clusters to own (the existing Enclomiphene explainer anchors it):
-1. TRT-induced infertility: the mechanism and how common it actually is
-2. Recovering fertility after stopping TRT: what the evidence shows on timeline and odds
-3. Enclomiphene, clomiphene, and hCG as fertility-preserving alternatives to TRT
-4. What to test before starting TRT, and why
-
-**DNA Fragmentation Cluster.** Goes deeper than the existing sperm-parameter overview (the existing "Does Sperm DNA Fragmentation Actually Matter?" piece anchors it):
-1. DFI testing methods compared: SCSA versus TUNEL versus Comet versus SCD
-2. Why a normal standard semen analysis can hide high DNA fragmentation
-3. DFI causes and thresholds explained in full
-
-### Continuing series
-
-These two series were already partway through their run before this Topic Map was restructured. They rank ahead of the newer Tier 2 and Tier 3 clusters because they are close to finished and each new entry compounds an existing series' internal linking:
-1. Sperm Parameter Series: Total Motile Sperm Count (TMSC), combining volume, concentration, and motility into one number and how to read all the parameters together
-2. Hormone Series: Thyroid (TSH), then SHBG
-
-### Tier 2
-
-**Male-Factor Conditions Cluster.** Named diagnoses in plain English, not just parameters (the existing Varicocele explainer anchors it):
-1. Azoospermia: obstructive versus non-obstructive, and what each means for a man's odds
-2. Oligozoospermia, asthenozoospermia, and teratozoospermia explained together as the "what my diagnosis is actually called" piece
-3. Hypogonadism: primary versus secondary, and how it differs from a normal aging-related testosterone decline
-4. Retrograde ejaculation
-5. Klinefelter syndrome
-6. Y-chromosome microdeletions
-7. IVF and ICSI: what each procedure is, and where male-factor testing fits in
-
-**Supplement Hub.** One comprehensive, evidence-honest reference covering CoQ10, L-carnitine, omega-3, zinc and folate, alpha-lipoic acid, and ashwagandha against every parameter, built around the Henriksen 2025 rule. This consolidates and cross-links the supplement evidence already scattered across the Sperm Parameter Series rather than repeating it.
-
-**Testing and Diagnostic Literacy Cluster** (the existing CLIA-certified-lab explainer anchors it):
-1. Test-retest variability: why one semen analysis is not the whole story
-2. The WHO 6th Edition manual explained: what it is, how thresholds are set
-3. At-home testing versus a clinic semen analysis: what is and is not comparable
-4. How to Read Your SwimScore Results: a plain-English guide to interpreting a semen analysis and hormone panel together
-
-### Tier 3: lifestyle and environmental factors
-
-Higher search volume, more competitive, so only the evidence-honest angle earns a place here, never a generic listicle. Within this cluster, prioritize the two most underserved topics first, ahead of the rest, which are already well covered elsewhere on the internet even if not yet on SwimScore:
-1. Cannabis, vaping, and sperm (underserved, prioritize)
-2. Paternal age and the male biological clock (underserved, prioritize)
-3. Smoking and sperm
-4. Diet and sperm quality
-5. Endocrine disruptors (BPA, phthalates, and similar)
-6. Heat exposure
-7. Alcohol
-8. Obesity
-9. Sleep and testosterone
-10. Exercise: moderate training versus overtraining
-
-Adding a wholly new topic area or cluster not listed above is a deliberate edit to this list, made when the brand decides to expand scope. It is not something the routine invents mid-run.
 
 ---
 
@@ -345,13 +306,26 @@ Each series is a linked cluster. Cross-link every article to the others in its s
 
 ## Standard Closing Lines
 
-For series articles, end with (in italics): "This is Part [X] of the SwimScore [Series Name]. Next up: [Next topic]."
+Article order is always: Key Takeaways (exactly three sentences), body, FAQ, numbered References, then these closing lines, in italics, in this order:
 
-Every article ends with (in italics): "SwimScore uses CLIA-certified labs for all semen analysis and hormone testing, assessed against WHO 6th Edition clinical thresholds."
+1. "Want to know your own numbers? [SwimScore <Tier>](<tier URL>) measures <what it tests> from home." The tier follows the Product Tier rule below.
+2. "If you're a clinic looking to offer fertility testing to your patients, sign up here." linking to /pages/for-clinics.
+3. "Related reading:" with 1 or 2 live SwimScore articles on the closest topic.
+4. A short "this is general education and not medical advice" line.
+5. "SwimScore uses CLIA-certified labs for all semen analysis and hormone testing, assessed against WHO 6th Edition clinical thresholds."
 
-For clinical topics also add (in italics): a short "this is general education and not medical advice" line.
+## Product Tier and Links
 
-Place the closing FAQ, and the References section where one is required, after Our Take (or after the main body, for content types without an Our Take section) and before this final block of italic closing lines.
+Apply the first rule that matches:
+1. Article involves hormones (TRT, hCG, steroids, GLP-1/weight, testosterone, full workup): SwimScore Complete, /products/swimscore-complete
+2. Article involves DNA damage (DFI, miscarriage, before IVF, paternal age, comparing at-home tests): SwimScore Advanced, /products/swimscore-advanced
+3. Everything else: SwimScore Essential, /products/swimscore-essential
+
+Use exactly two product links per article, both to the chosen tier: one in the body where the article explains how to find out your own number, with descriptive anchor text (for example "SwimScore Advanced measures DNA fragmentation at home", never "buy now" or "click here"), and one in closing line 1. The next tier up may be mentioned once in plain text, without a link. Include at least 2 body links to related live SwimScore articles.
+
+## Titles
+
+Use the reader's question in their own words, for example "Does Creatine Affect Sperm?". Do not use "What the Research Actually Shows" if the newest live article already uses it.
 
 ---
 

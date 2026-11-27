@@ -25,28 +25,28 @@ Do this end to end:
    report exactly what is missing. Do not proceed.
 2. Pick the topic. Query the Shopify "News" blog
    (`gid://shopify/Blog/92195225782`) for all existing articles, live, every
-   run. Walk the `swimscore-content` skill's Topic Map in priority order and
-   pick the first topic with no substantive existing article, per "Choosing a
-   Topic" in `SWIMSCORE_BLOG_WORKFLOW.md`. The Topic Map lists what SwimScore
-   wants authority on; it never records what is already published, so
-   coverage always comes from the live query, never from memory of a prior
-   run or from any status written in a repo file. State the topic and a
-   one-line justification. If every Topic Map entry is already covered,
-   propose 2 to 3 adjacent candidates or stop and ask, rather than repeating
-   a topic or inventing one unflagged.
-3. Research using real primary sources (PubMed, PMC, AUA/EAU/ASRM/WHO
-   guidelines). Cite as (Author et al., Journal, Year). Flag anything thin or
-   unverified; never cite unverified claims; never overclaim pregnancy or
-   live-birth benefit.
-4. Write to spec. HARD RULES: no em-dashes or en-dashes anywhere; plain English
-   explaining every term; prose, not bullet lists; include a "what we are more
-   skeptical about" beat where relevant. Add internal links to relevant
-   published SwimScore articles plus `/products/swimscore-complete` (client CTA)
-   and `/pages/for-clinics` (clinic CTA). Close with the italic CLIA / WHO 6th
-   Edition line, and a not-medical-advice line for clinical topics. Produce an
-   SEO meta title (~55-60 chars), a meta description (~150-160 chars), a URL
-   handle, and a short summary. Body as clean semantic HTML (`<p>`, `<h2>`,
-   `<a>`, `<em>`, `<hr>`); do not repeat the title in the body.
+   run. Choose a topic per PART 1 of `SWIMSCORE_BLOG_WORKFLOW.md`: categories
+   A-H, a different category from either of the last 2 articles, no question
+   an existing article already answers, and never stop for lack of ideas.
+   Coverage always comes from the live query, never from memory or a repo
+   file. State the category, the topic, and a one-line reason, and save that
+   line in the `swimscore.draft_notes` metafield (not in the article).
+3. Research using real primary sources only (PubMed, PMC, AUA/EAU/ASRM/WHO
+   guidelines), never news or blogs. Cite as (Author et al., Journal, Year)
+   with a PubMed or DOI link. Label weak evidence; delete anything unverified;
+   never overclaim pregnancy or live-birth benefit. Check any price live this
+   run, per the Prices rules in PART 2.
+4. Write to PART 2 and PART 3 of `SWIMSCORE_BLOG_WORKFLOW.md`. HARD RULES: no
+   em-dashes or en-dashes anywhere; plain English explaining every term; prose,
+   not bullet lists; a "What we are more skeptical about" section; title is the
+   reader's question. Pick the product tier (hormones -> Complete; DNA damage ->
+   Advanced; else Essential) and use exactly two product links, both to that
+   tier. At least 2 body links to related live articles. Closing lines in
+   italics, in order: tier line, clinic sign-up line linking
+   `/pages/for-clinics`, "Related reading:", not-medical-advice, CLIA / WHO 6th
+   Edition. Produce an SEO meta title (~55-60 chars), a meta description
+   (~150-160 chars), a URL handle, and a short summary. Body as clean semantic
+   HTML; do not repeat the title in the body.
 5. Generate the hero image with `flux_generate.py` (16:9). IMAGE RULE: people
    must be men only, or a man with a woman (heterosexual couple). Never same-sex
    couples, never women-only, because SwimScore is a male-fertility brand.
@@ -60,7 +60,8 @@ Do this end to end:
    the image (`stagedUploadsCreate`, POST the file, use the `resourceUrl`) and
    attach it with descriptive SEO alt text. Set SEO metafields
    `global.title_tag` and `global.description_tag` (type
-   `single_line_text_field`). Set relevant tags and author `{ name: "Denys Vasylenko" }`.
+   `single_line_text_field`), plus `swimscore.draft_notes` with the category
+   and reason. Set relevant tags and author `{ name: "Denys Vasylenko" }`.
 7. Before finalizing, run `CONTENT_CHECKLIST.md` end to end and fix anything that
    fails (not pushing meds/supplements; everything true to the cited sources;
    genuinely helpful for navigating mixed research; simple enough for any

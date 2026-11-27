@@ -19,8 +19,10 @@ A **Claude Routine** (scheduled trigger) fires **twice a week, Tuesday and
 Thursday at 13:30 UTC (~9:30am US Eastern)**. Each run:
 
 1. Reads `SWIMSCORE_BLOG_WORKFLOW.md` and follows the `swimscore-content` skill.
-2. Queries the Shopify **News** blog and picks the next priority topic not yet
-   covered.
+2. Queries the Shopify **News** blog and picks a topic from categories A-H
+   (cost, testing, meds/supplements, result numbers, symptoms, life events,
+   myths, lifestyle) that no live article already answers, rotating away from
+   the categories of the last 2 articles.
 3. Researches it against real primary sources and writes the article to spec
    (no em-dashes, plain English, honest about uncertainty, internal links,
    client + clinic CTAs).

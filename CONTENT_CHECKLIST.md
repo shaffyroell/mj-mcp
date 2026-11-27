@@ -92,11 +92,30 @@ SwimScore's goal is to be the source an AI assistant (ChatGPT, Claude, Perplexit
 ## Hard rules (also verify)
 
 - [ ] **Zero em-dashes and zero en-dashes** anywhere. Scan explicitly.
-- [ ] Internal links to relevant published SwimScore articles.
-- [ ] A client CTA (`/products/swimscore-complete`) and, where natural, a clinic
-      CTA (`/pages/for-clinics`).
-- [ ] Closes with the italic CLIA / WHO 6th Edition line, plus a
-      not-medical-advice line for clinical topics.
+- [ ] Topic is in a category (A-H) different from both of the last 2 articles,
+      and no live article already answers the same question.
+- [ ] Title is the reader's question in their own words, and does not reuse
+      "What the Research Actually Shows" if the newest live article uses it.
+- [ ] Key Takeaways is exactly three sentences.
+- [ ] A section titled "What we are more skeptical about" is present.
+- [ ] Myth article (G): verdict in the first paragraph. Symptom article (E):
+      says when to see a doctor promptly, and never says testing replaces an exam.
+- [ ] Any supplement discussion states the Henriksen 2025 finding.
+- [ ] Every price was checked live this run, with "Prices checked [Month Year]".
+      Any DNA fragmentation price comparison uses only SwimScore Advanced and
+      Legacy, both checked live this run; otherwise it is left out.
+- [ ] Product tier chosen by the first matching rule (hormones -> Complete;
+      DNA damage -> Advanced; else Essential), with **exactly two** product
+      links, both to that tier (one in the body with descriptive anchor text,
+      one in closing line 1).
+- [ ] At least 2 body links to related live SwimScore articles.
+- [ ] Closing lines in italics, in order: (1) "Want to know your own numbers?"
+      tier line, (2) "If you're a clinic looking to offer fertility testing to
+      your patients, sign up here." linking `/pages/for-clinics`, (3) "Related
+      reading:" with 1-2 live articles, (4) not-medical-advice line, (5) CLIA /
+      WHO 6th Edition line.
+- [ ] Draft notes (category + why picked) saved in metafield
+      `swimscore.draft_notes`, not in the article.
 - [ ] Hero image follows the image rules (men only, or a man with a woman;
       relatable and realistic, not a fashion model; no text/AI artifacts).
 - [ ] SEO meta title (~55-60 chars) and meta description (~150-160 chars) set.
